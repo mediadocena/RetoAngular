@@ -1,0 +1,26 @@
+<div class="example-box" cdkDrag>
+<form [formGroup]="formOwner" (submit)="submit()" >
+  <div style="background-color: white; width: fit-content" class="rounded">
+    <mat-label>Employer Form</mat-label>
+    <div class="example-container">
+      <mat-form-field appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="name"/>
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="fill">
+        <mat-label>Salary</mat-label>
+        <input matInput formControlName="salary" />
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="fill">
+        <mat-label>Age</mat-label>
+        <input matInput formControlName="age" />
+      </mat-form-field>
+    </div>
+    <div style="text-align: center;">
+      <button  mat-raised-button color="primary" type="submit">Create</button>
+    </div>
+  </div>
+  </form>
+</div>
