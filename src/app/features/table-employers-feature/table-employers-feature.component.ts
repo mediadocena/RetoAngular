@@ -17,6 +17,10 @@ export class TableEmployersFeatureComponent implements OnInit {
   getEmployers(): void {
     this.employers.doGetAll().subscribe((res) => {
       this.data = res;
+      console.log('res: ',res )
+    },err =>{
+      console.log(err);
+      alert('Error: '+err.statusText);
     });
   }
 
@@ -24,7 +28,10 @@ export class TableEmployersFeatureComponent implements OnInit {
     console.log('del');
     this.employers.doDeleteId(id).subscribe((res)=>{
       console.log(res);
-    })
+    },err =>{
+      console.log(err);
+      alert('Error: '+err.statusText);
+    });
   }
 
 }

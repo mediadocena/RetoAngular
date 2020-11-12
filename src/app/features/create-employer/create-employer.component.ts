@@ -7,6 +7,7 @@ import { EmployerServiceService } from 'src/app/services/employer-service.servic
   styleUrls: ['./create-employer.component.scss']
 })
 export class CreateEmployerComponent implements OnInit {
+  create:string='Create';
   constructor(private employers: EmployerServiceService) {}
 
   ngOnInit(): void {}
@@ -17,6 +18,9 @@ export class CreateEmployerComponent implements OnInit {
   createEmployer(values) {
     this.employers.createEmployee(values).subscribe((res) => {
       console.log('respuesta al crear empleado', res);
+    },err =>{
+      console.log(err);
+      alert('Error: '+err.statusText);
     });
   }
 }

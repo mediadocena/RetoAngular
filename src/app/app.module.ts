@@ -20,6 +20,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { EditEmployerFeatureComponent } from './features/edit-employer-feature/edit-employer-feature.component';
 import { CreateEmployerComponent } from './features/create-employer/create-employer.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,9 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     HttpClientModule,
     MatTableModule,
     MatToolbarModule,
-    DragDropModule
+    DragDropModule,
+    MatProgressSpinnerModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

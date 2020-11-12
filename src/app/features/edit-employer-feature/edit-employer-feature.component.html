@@ -1,1 +1,6 @@
-<app-employer-form [data]="data" *ngIf="ready" (formValue)="updateEmployee($event)"></app-employer-form>
+<div style="width: fit-content;" class="center"*ngIf="!ready">
+    <mat-spinner></mat-spinner>
+</div>
+<div layout="row" style="width: fit-content;" class="center">
+<app-employer-form [buttonName]='edit' [data]="data" *ngIf="ready" (formValue)="updateEmployee($event)"></app-employer-form>
+</div>

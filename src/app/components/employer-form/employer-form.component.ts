@@ -14,6 +14,7 @@ export class EmployerFormComponent implements OnInit {
   @Output() formValue: EventEmitter<any> = new EventEmitter<any>();
   formOwner: FormGroup;
   @Input() data:any = null;
+  @Input() buttonName:string;
 
   constructor(private formBuilder: FormBuilder) {}
   ngOnInit(): void {

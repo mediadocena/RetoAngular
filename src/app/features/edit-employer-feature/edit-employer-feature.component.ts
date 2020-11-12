@@ -13,16 +13,19 @@ export class EditEmployerFeatureComponent implements OnInit {
 
   @Output() data:any
   ready:boolean = false;
-
+  edit:string = 'Edit';
   constructor(private route: ActivatedRoute,private employers:EmployerServiceService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       console.log(params.get('id'));
      this.employers.doGetAllId(params.get('id')).subscribe((res)=>{
-       console.log(res.data);
+       console.log('res',res.data);
         this.data = res.data;
         this.ready = true;
+      },err =>{
+        console.log(err);
+        alert('Error: '+err.statusText);
       })
     });
     
@@ -32,6 +35,9 @@ export class EditEmployerFeatureComponent implements OnInit {
     console.log('Updated: ',data)
     this.employers.putEmployee(data).subscribe((res)=>{
       console.log('respuesta: ',res);
+    },err =>{
+      console.log(err);
+      alert('Error: '+err.statusText);
     });
   }
 
